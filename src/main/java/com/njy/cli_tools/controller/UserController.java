@@ -24,7 +24,7 @@ public class UserController {
 
     @PostMapping("/validatePhoneNumber")
     public String validatePhoneNumber(@RequestBody @Valid UserDTO userDTO) {
-        return "Valid phone number!";
+        return userDTO.phoneNumber();
     }
 
 

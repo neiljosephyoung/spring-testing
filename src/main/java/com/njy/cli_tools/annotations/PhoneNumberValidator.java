@@ -27,7 +27,6 @@ public class PhoneNumberValidator implements ConstraintValidator<ValidPhoneNumbe
             phoneNumber = PhoneNumberUtil.normalizeDigitsOnly(phoneNumber);
             Phonenumber.PhoneNumber parsedNumber = phoneNumberUtil.parse(phoneNumber, "IE");
             String regionCode = phoneNumberUtil.getRegionCodeForNumber(parsedNumber);
-            System.out.println(parsedNumber);
             return phoneNumberUtil.isValidNumber(parsedNumber) && ALLOWED_REGIONS.contains(regionCode);
         } catch (NumberParseException e) {
             return false;
